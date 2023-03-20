@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1> Задача 1</h1>
+	<p>
+		Знайти суми елементів у вказаній області		
+	</p>
+	<script>
+//------------------------1)
+
+		let arr = [[11,15,74,42,62],[50,69,35,72,48],[11,25,45,78,33],[58,96,47,1,25]]
+
+		let sum1 = 0
+		for (let rowIndex = 0; rowIndex <=1; rowIndex++) {
+			for (let columnIndex = 0; columnIndex <=1; columnIndex++) {
+				sum1 += arr[rowIndex][columnIndex]
+			}
+		}
+		alert(`Перша сума = ${sum1}`)
+
+//------------------------2)
+
+		let sum2 = 0
+		for (let rowIndex = 0; rowIndex <=1; rowIndex++) {
+			for (let columnIndex = 2; columnIndex <=4; columnIndex++) {
+				sum2 += arr[rowIndex][columnIndex]
+			}
+		}
+		alert(`Друга сума = ${sum2}`)
+
+//-----------------------3)
+
+		let sum3 = 0
+		for (let rowIndex = 2; rowIndex <= 3; rowIndex++) {
+			for (let colIndex = 0; colIndex <= 1; colIndex++) {
+				sum3 += arr[rowIndex][colIndex]
+			}
+		}
+		alert(`Третя сума = ${sum3}`)
+
+//------------------------4)
+
+		let sum4 = 0
+		for (let rowIndex = 2; rowIndex <=3; rowIndex++) {
+			for (let colIndex = 2; colIndex <=4; colIndex++) {
+				sum4 += arr[rowIndex][colIndex]
+			}
+		}
+		alert(`Четверта сума = ${sum4}`)
+
+//-----------------------5) Суму парних рядків
+
+		let sum5 = 0
+		for (let rowIndex = 0; rowIndex < arr.length; rowIndex+=2) {
+			for (let colIndex = 0; colIndex < arr[rowIndex].length; colIndex++) {
+				sum5 += arr[rowIndex][colIndex]
+				}
+			
+		}
+		alert(`Сума парних рядків = ${sum5}`)
+
+//-------------------6) Суму непарних стовпців
+		let sum6 = 0
+		for (let rowIndex = 0; rowIndex < arr.length; rowIndex++) {
+			for (let colIndex = 0; colIndex < arr[rowIndex].length; colIndex+=2) {
+				sum6 += arr[rowIndex][colIndex]
+			}
+			
+		}
+		alert(`Сума непарних стовпців = ${sum6}`)
+
+//-----------------7) У парних рядках – непарні стовпці, у непарних – парні.
+
+		let sum7 = 0
+		let sum8 = 0
+		for (let rowIndex = 0; rowIndex < arr.length; rowIndex++) {
+			for (let colIndex = 0; colIndex < arr[rowIndex].length; colIndex++) {
+				if (rowIndex%2 ===0 && colIndex%2 !==0) sum7 += arr[rowIndex][colIndex]
+				if (rowIndex%2 !==0 && colIndex%2 ===0) sum8 += arr[rowIndex][colIndex]
+			}
+		}
+		alert(`Сума у парних рядках – непарні стовпці = ${sum7} 
+		Сума у непарних рядках – парні стовпці = ${sum8}`)
+	</script>
+</body>
+.
+</html>
+

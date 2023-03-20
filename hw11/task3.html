@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1> Задача 3</h1>
+	<p>
+ Морський бій. Випадковим чином на двовимірному полі розміром 6*6 розташовується 5 кораблів. 
+ Користувач стріляє вказуючи координати. 
+ Гра продовжується поки не потоплено усі кораблі або у користувача не закінчаться снаряди.	</p>
+	<script>
+		function getRandomNum(minV, maxV) {
+			return minV + Math.floor(Math.random()*(maxV - minV + 1))
+		}
+
+		function getFreeCells(arr) {
+			let shipIndex
+			do {
+				shipIndex = getRandomNum(0, 5)
+			} while (arr[shipIndex] === 1)
+			return shipIndex
+		}
+
+		function getTable(rowNum, colNum, shipsNum) {
+			const arr = []
+			for (let i = 0; i < rowNum; i++) {
+				arr.push(new Array(rowNum).fill(0))
+				for (let j = 0; j < shipsNum; j++) {
+					let shipIndex = getFreeCells(arr)
+					arr[shipIndex] = 1
+				}
+			}
+			return arr
+		}
+		let table = getTable(6, 6)
+		document.write(table)
+	</script>
+</body>
+
+</html>
+

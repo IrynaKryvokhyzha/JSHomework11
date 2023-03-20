@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1> Задача 1</h1>
+	<p>
+		Дано випадкові значення виграшів - результати ігрового барабана (від -500 до 500)
+		Обчислити:
+	</p>
+	<script>
+		let scores = [56, -78, 252, 23, -122, 356, 122, 436, -111, 344, 21, 3, -356, 342,]
+		
+//--------- -2) Вивести виграшні значення (>0)
+		// scores.forEach(element => {
+		// 	if (element>0)
+		// 	alert(element)
+		// }
+		// )
+//---------- -1) Від виграшних значень відняти 20% (*0,8)
+				scores.forEach((element, index, arrRef) => {
+			if (element>0) arrRef[index] *= 0.8
+			alert(arrRef[index])
+		}
+		)
+		
+	</script>
+</body>
+</html>
